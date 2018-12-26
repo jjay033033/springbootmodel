@@ -1,0 +1,7 @@
+/target/
+/logs/
+/.keystore
+/.rebel.xml.bak
+/.settings/
+/.classpath
+/.project

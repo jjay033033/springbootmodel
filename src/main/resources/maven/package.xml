@@ -1,0 +1,30 @@
+<assembly>
+	<id>bin</id>
+	<formats>
+		<format>dir</format>
+	</formats>
+	
+	<fileSets>
+		<fileSet>
+			<directory>shell</directory>
+			<outputDirectory></outputDirectory>
+			<includes>
+				<include>*</include>
+			</includes>
+		</fileSet>
+		<fileSet>
+			<directory>config</directory>
+			<outputDirectory>config</outputDirectory>
+			<includes>
+				<include>*</include>
+			</includes>
+		</fileSet>
+		<fileSet>
+			<directory>target</directory>
+			<outputDirectory></outputDirectory>
+			<includes>
+				<include>LiveAnalysisRdsIntf-0.0.1.jar</include>
+			</includes>
+		</fileSet>
+	</fileSets>
+</assembly>  
