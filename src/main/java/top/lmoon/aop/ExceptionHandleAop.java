@@ -17,7 +17,7 @@ public class ExceptionHandleAop {
 	private final static Logger LOGGER = LoggerFactory.getLogger(ExceptionHandleAop.class);
 
 	// 切面应用范围是在com.gzyct.modules.spark包下面所有函数
-	@Around("execution(* top.lmoon.test..*.*(..))")
+	@Around("execution(* top.lmoon..*.*(..))")
 	public Object aroundAdvice(ProceedingJoinPoint joinPoint) throws Throwable {
 		String signatureName = joinPoint.getSignature().getName();
 		Class<? extends Object> invokeClass = joinPoint.getTarget().getClass();
