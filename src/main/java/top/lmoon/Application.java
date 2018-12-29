@@ -20,10 +20,10 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableScheduling
 @EnableAsync
 @EnableCaching
-public class YctApiApplication implements CommandLineRunner {
+public class Application implements CommandLineRunner {
 
 	public static void main(String[] args) {
-		SpringApplication.run(YctApiApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 
 	@Override
