@@ -6,7 +6,7 @@ import java.net.URLEncoder;
  * 过滤非法字符工具类
  * 
  */
-public class EncodeFilter {
+public class EncodeUtil {
 
     //过滤大部分html字符
     public static String encode(String input) {
@@ -123,63 +123,5 @@ public class EncodeFilter {
         return result;
     }
 
-    public static boolean isValidURL(String input) {
-        if (input == null || input.length() < 8) {
-            return false;
-        }
-        char ch0 = input.charAt(0);
-        if (ch0 == 'h') {
-            if (input.charAt(1) == 't' &&
-                input.charAt(2) == 't' &&
-                input.charAt(3) == 'p') {
-                char ch4 = input.charAt(4);
-                if (ch4 == ':') {
-                    if (input.charAt(5) == '/' &&
-                        input.charAt(6) == '/') {
-
-                        return isValidURLChar(input, 7);
-                    } else {
-                        return false;
-                    }
-                } else if (ch4 == 's') {
-                    if (input.charAt(5) == ':' &&
-                        input.charAt(6) == '/' &&
-                        input.charAt(7) == '/') {
-
-                        return isValidURLChar(input, 8);
-                    } else {
-                        return false;
-                    }
-                } else {
-                    return false;
-                }
-            } else {
-                return false;
-            }
-
-        } else if (ch0 == 'f') {
-            if( input.charAt(1) == 't' &&
-                input.charAt(2) == 'p' &&
-                input.charAt(3) == ':' &&
-                input.charAt(4) == '/' &&
-                input.charAt(5) == '/') {
-
-                return isValidURLChar(input, 6);
-            } else {
-                return false;
-            }
-        }
-        return false;
-    }
-
-    static boolean isValidURLChar(String url, int start) {
-        for (int i = start, c = url.length(); i < c; i ++) {
-            char ch = url.charAt(i);
-            if (ch == '"' || ch == '\'') {
-                return false;
-            }
-        }
-        return true;
-    }
 
 }

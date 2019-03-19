@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import top.lmoon.test.Test;
 import top.lmoon.test.Test2;
+import top.lmoon.util.EncodeUtil;
 
 @Controller
 @RequestMapping(value = "/testapi")
@@ -28,6 +29,13 @@ public class TestController {
 		Test2 t = new Test2();
 		t.t();
 		return "";
+	}
+	
+	@RequestMapping(value = "/test3")
+	@ResponseBody
+	public String test3(String str) {
+		String encode = EncodeUtil.encode(str);
+		return encode;
 	}
 	
 }
